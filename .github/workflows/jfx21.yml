@@ -21,7 +21,7 @@ jobs:
       - name: Checkout the source
         uses: actions/checkout@v4
         with:
-          repository: openjdk/jfx
+          repository: streamingdv/jfx
           path: jfx
           ref: jfx21
 
