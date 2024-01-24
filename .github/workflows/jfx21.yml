@@ -25,6 +25,9 @@ jobs:
           path: jfx
           ref: jfx21
 
+      - name: Enabling ES2 pipeline
+        run: powershell -Command "(gc jfx/build.gradle) -replace ', IS_WINDOWS ? ', ', false ' | Out-File -encoding ASCII jfx/build.gradle"
+
       - name: Download boot JDK
         run: |
           mkdir -p "$HOME\bootjdk"
@@ -77,4 +80,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Upload
-          path: ./jfx/build/publications/javafx.graphics-win.jar
+          path: ./jfx/build/publications
