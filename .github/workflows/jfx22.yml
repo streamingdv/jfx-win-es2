@@ -1,4 +1,4 @@
-name: JavaFX 21 Win-ES2 compilation
+name: JavaFX 22 Win-ES2 compilation
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
         with:
           repository: streamingdv/jfx
           path: jfx
-          ref: jfx21
+          ref: jfx22
 
       - name: Enabling ES2 pipeline
         run: powershell -Command "(gc jfx/build.gradle) -replace ', IS_WINDOWS ? ', ', false ' | Out-File -encoding ASCII jfx/build.gradle"
